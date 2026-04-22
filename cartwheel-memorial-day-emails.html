@@ -27,7 +27,6 @@
       color: var(--charcoal);
     }
 
-    /* ── Page chrome ── */
     .page-header {
       max-width: 600px;
       margin: 0 auto 36px;
@@ -51,10 +50,8 @@
       color: var(--taupe);
     }
 
-    /* ── Email wrapper ── */
     .email-wrapper { max-width: 600px; margin: 0 auto 48px; }
 
-    /* ── Email metadata bar ── */
     .email-meta {
       background: #FAFAF9;
       border: 1px solid #D9D4CE;
@@ -82,7 +79,6 @@
     .meta-val { font-size: 12px; color: #555; }
     .meta-val.subject { font-size: 13px; font-weight: 600; color: var(--charcoal); }
 
-    /* ── Email shell ── */
     .email {
       background: var(--sand);
       border: 1px solid #D9D4CE;
@@ -90,7 +86,6 @@
       overflow: hidden;
     }
 
-    /* ── Header ── */
     .email-header {
       background: var(--indigo);
       padding: 16px 36px;
@@ -115,10 +110,8 @@
       color: rgba(255,255,255,0.5);
     }
 
-    /* ── Body ── */
     .email-body { background: #fff; padding: 28px 36px 24px; }
 
-    /* ── Already-done dismissal banner (emails 2–4) ── */
     .already-done {
       background: var(--light-mint);
       border-radius: 7px;
@@ -128,11 +121,7 @@
       align-items: flex-start;
       gap: 10px;
     }
-    .already-done-icon {
-      font-size: 15px;
-      flex-shrink: 0;
-      line-height: 1.5;
-    }
+    .already-done-icon { font-size: 15px; flex-shrink: 0; line-height: 1.5; }
     .already-done p {
       font-size: 13px;
       color: var(--forest);
@@ -143,7 +132,6 @@
     .already-done p strong { color: var(--forest); }
 
     .greeting { font-size: 14px; color: var(--charcoal); margin-bottom: 10px; }
-
     .email-body > p {
       font-size: 14px;
       line-height: 1.65;
@@ -151,7 +139,6 @@
       margin-bottom: 20px;
     }
 
-    /* ── Action blocks ── */
     .actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
 
     .action-block {
@@ -204,7 +191,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* ── Confirm block (inside action 2) ── */
     .confirm-block {
       background: var(--light-lavender);
       border-radius: 7px;
@@ -258,12 +244,11 @@
       font-style: italic;
     }
 
-    /* ── Outcomes ── */
     .outcomes {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
     .outcome {
       background: var(--sand);
@@ -282,7 +267,30 @@
     .lbl-no  { color: var(--forest); }
     .outcome p { font-size: 12px; color: #555; line-height: 1.5; }
 
-    /* ── Deadline ── */
+    /* No-response warning callout */
+    .no-response-warning {
+      border: 1.5px solid #F0702E;
+      border-radius: 7px;
+      padding: 12px 15px;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: #FFF8F5;
+    }
+    .no-response-warning .warn-icon {
+      font-size: 14px;
+      flex-shrink: 0;
+      line-height: 1.55;
+    }
+    .no-response-warning p {
+      font-size: 12px;
+      color: #6B3A1F;
+      line-height: 1.55;
+      margin: 0 !important;
+    }
+    .no-response-warning p strong { color: var(--orange); }
+
     .deadline {
       display: inline-block;
       background: var(--orange);
@@ -299,27 +307,17 @@
     hr.divider { border: none; border-top: 1px solid #F0ECE9; margin: 18px 0; }
 
     .help-text { font-size: 13px; color: var(--taupe); margin-bottom: 18px; }
+    .help-text strong { color: var(--charcoal); }
     .help-text a { color: var(--indigo); text-decoration: underline; }
 
     .signature { font-size: 13px; color: #555; }
     .signature strong { color: var(--charcoal); }
 
-    /* ── Footer ── */
     .email-footer { background: var(--sand); padding: 11px 36px; }
     .email-footer p { font-size: 11px; color: var(--taupe); }
     .email-footer a { color: var(--taupe); }
 
-    /* ── Notes section ── */
     .notes-section { max-width: 600px; margin: 0 auto; }
-    .flag-box {
-      background: #FFF6F0;
-      border-left: 3px solid var(--orange);
-      border-radius: 0 6px 6px 0;
-      padding: 13px 17px;
-      margin-bottom: 14px;
-    }
-    .flag-box p { font-size: 13px; color: #444; line-height: 1.6; }
-    .flag-box strong { color: var(--orange); }
     .impl-box {
       background: white;
       border: 1px solid #D9D4CE;
@@ -348,7 +346,7 @@
 
 
 <!-- ═══════════════════════════════════════════
-     EMAIL 1 · May 5  (first send — everyone)
+     EMAIL 1 · May 5
      ═══════════════════════════════════════════ -->
 <div class="email-wrapper">
   <div class="email-meta">
@@ -375,8 +373,6 @@
       <p>We're launching a <strong>Cartwheel Closure Calendar</strong> that automatically blocks holidays in your Healthie schedule — starting with Memorial Day (May 25). You have two things to complete before <strong>May 21</strong>.</p>
 
       <div class="actions">
-
-        <!-- Action 1 -->
         <div class="action-block">
           <div class="action-num">1</div>
           <div class="action-body">
@@ -386,12 +382,11 @@
           </div>
         </div>
 
-        <!-- Action 2 -->
         <div class="action-block">
           <div class="action-num">2</div>
           <div class="action-body">
             <strong>Confirm your Memorial Day plan</strong>
-            <span class="sub">This tells us whether to keep or clear the May 25 block on your schedule.</span>
+            <span class="sub">This tells us whether your sessions are running on May 25.</span>
             <div class="confirm-block">
               <p class="confirm-q">Will you be seeing clients on May 25?</p>
               <div class="btn-row">
@@ -402,26 +397,28 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="outcomes">
         <div class="outcome">
           <div class="outcome-label lbl-yes">If you're working</div>
-          <p>Remove the holiday block so sessions stay active. Notify clients as usual.</p>
+          <p>Your sessions stay scheduled. The block remains — appointments run on top of it. Confirm with clients they can attend.</p>
         </div>
         <div class="outcome">
           <div class="outcome-label lbl-no">If you're not working</div>
-          <p>Keep the block. Cancel or reschedule existing sessions and notify clients.</p>
+          <p>Cancel or reschedule any existing sessions and notify your clients.</p>
         </div>
       </div>
 
+      <div class="no-response-warning">
+        <div class="warn-icon">⚠️</div>
+        <p><strong>No response by May 21 at 11:59 PM PST?</strong> We'll assume you're not working and will cancel all appointments scheduled for May 25 on Friday, May 23.</p>
+      </div>
+
       <div><span class="deadline">Deadline: May 21</span></div>
-
       <hr class="divider">
-
       <p class="help-text">
-        Need help? Join <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Wednesday office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">submit a help desk ticket</a>.
+        <strong>Need help?</strong> Join <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Wednesday office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">submit a help desk ticket</a>.
       </p>
       <p class="signature">— <strong>Provider Success Team</strong></p>
     </div>
@@ -433,7 +430,7 @@
 
 
 <!-- ═══════════════════════════════════════════
-     EMAIL 2 · May 12  (all clinicians)
+     EMAIL 2 · May 12
      ═══════════════════════════════════════════ -->
 <div class="email-wrapper">
   <div class="email-meta">
@@ -456,7 +453,6 @@
       <div class="automated-tag">Automated notification</div>
     </div>
     <div class="email-body">
-
       <div class="already-done">
         <div class="already-done-icon">✓</div>
         <p><strong>Already confirmed your plan?</strong> You can ignore this — just make sure you've completed the calendar sync in Step 1.</p>
@@ -466,7 +462,6 @@
       <p>Memorial Day is two weeks away. If you haven't completed both steps yet:</p>
 
       <div class="actions">
-
         <div class="action-block">
           <div class="action-num">1</div>
           <div class="action-body">
@@ -489,22 +484,26 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="outcomes">
         <div class="outcome">
           <div class="outcome-label lbl-yes">Working</div>
-          <p>Remove the holiday block. Keep sessions, notify clients.</p>
+          <p>Your sessions stay scheduled. The block remains — appointments run on top of it. Confirm with clients they can attend.</p>
         </div>
         <div class="outcome">
           <div class="outcome-label lbl-no">Not working</div>
-          <p>Keep the block. Cancel or reschedule sessions, notify clients.</p>
+          <p>Cancel or reschedule any existing sessions and notify your clients.</p>
         </div>
       </div>
 
+      <div class="no-response-warning">
+        <div class="warn-icon">⚠️</div>
+        <p><strong>No response by May 21 at 11:59 PM PST?</strong> We'll assume you're not working and will cancel all appointments scheduled for May 25 on Friday, May 23.</p>
+      </div>
+
       <p class="help-text">
-        Questions? <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">help desk</a>.
+        <strong>Need help?</strong> Join <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Wednesday office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">submit a help desk ticket</a>.
       </p>
       <p class="signature">— <strong>Provider Success Team</strong></p>
     </div>
@@ -516,7 +515,7 @@
 
 
 <!-- ═══════════════════════════════════════════
-     EMAIL 3 · May 19  (all clinicians)
+     EMAIL 3 · May 19
      ═══════════════════════════════════════════ -->
 <div class="email-wrapper">
   <div class="email-meta">
@@ -539,7 +538,6 @@
       <div class="automated-tag">Automated notification</div>
     </div>
     <div class="email-body">
-
       <div class="already-done">
         <div class="already-done-icon">✓</div>
         <p><strong>Already confirmed your plan?</strong> You can ignore this — just make sure you've completed the calendar sync in Step 1.</p>
@@ -549,7 +547,6 @@
       <p>Memorial Day is next Monday. Deadline to complete both steps is <strong>May 21</strong>.</p>
 
       <div class="actions">
-
         <div class="action-block">
           <div class="action-num">1</div>
           <div class="action-body">
@@ -572,22 +569,26 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="outcomes">
         <div class="outcome">
           <div class="outcome-label lbl-yes">Working</div>
-          <p>Remove the holiday block. Keep sessions, notify clients.</p>
+          <p>Your sessions stay scheduled. The block remains — appointments run on top of it. Confirm with clients they can attend.</p>
         </div>
         <div class="outcome">
           <div class="outcome-label lbl-no">Not working</div>
-          <p>Keep the block. Cancel or reschedule sessions, notify clients.</p>
+          <p>Cancel or reschedule any existing sessions and notify your clients.</p>
         </div>
       </div>
 
+      <div class="no-response-warning">
+        <div class="warn-icon">⚠️</div>
+        <p><strong>No response by May 21 at 11:59 PM PST?</strong> We'll assume you're not working and will cancel all appointments scheduled for May 25 on Friday, May 23.</p>
+      </div>
+
       <p class="help-text">
-        Questions? <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">help desk</a>.
+        <strong>Need help?</strong> Join <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Wednesday office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">submit a help desk ticket</a>.
       </p>
       <p class="signature">— <strong>Provider Success Team</strong></p>
     </div>
@@ -599,7 +600,7 @@
 
 
 <!-- ═══════════════════════════════════════════
-     EMAIL 4 · May 21  (all clinicians — final)
+     EMAIL 4 · May 21 — Final
      ═══════════════════════════════════════════ -->
 <div class="email-wrapper">
   <div class="email-meta">
@@ -622,7 +623,6 @@
       <div class="automated-tag">Automated notification</div>
     </div>
     <div class="email-body">
-
       <div class="already-done">
         <div class="already-done-icon">✓</div>
         <p><strong>Already confirmed your plan?</strong> You can ignore this — just make sure you've completed the calendar sync in Step 1.</p>
@@ -632,7 +632,6 @@
       <p>Today is the deadline. Memorial Day is this Monday — please complete both steps now if you haven't.</p>
 
       <div class="actions">
-
         <div class="action-block">
           <div class="action-num">1</div>
           <div class="action-body">
@@ -655,18 +654,22 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="outcomes">
         <div class="outcome">
           <div class="outcome-label lbl-yes">Working</div>
-          <p>Remove the holiday block so sessions stay active. Notify clients.</p>
+          <p>Your sessions stay scheduled. The block remains — appointments run on top of it. Confirm with clients they can attend.</p>
         </div>
         <div class="outcome">
           <div class="outcome-label lbl-no">Not working</div>
-          <p>Keep the block. Cancel or reschedule sessions. Notify clients.</p>
+          <p>Cancel or reschedule any existing sessions and notify your clients.</p>
         </div>
+      </div>
+
+      <div class="no-response-warning">
+        <div class="warn-icon">⚠️</div>
+        <p><strong>No response by 11:59 PM PST tonight?</strong> We'll assume you're not working and will cancel all appointments scheduled for May 25 tomorrow, Friday, May 23.</p>
       </div>
 
       <p class="help-text">
@@ -682,25 +685,18 @@
 
 
 <!-- ═══════════════════════════════════════════
-     NOTES
+     IMPLEMENTATION NOTES
      ═══════════════════════════════════════════ -->
 <div class="notes-section">
-
-  <div class="flag-box">
-    <p><strong>⚠ Content inconsistency to resolve before sending:</strong> The original Email 1 says "if working, appointments remain as scheduled" with no action needed. Emails 3–4 say working clinicians should <em>remove</em> the holiday block. The templates above use the more explicit version. Confirm the correct instruction before launch.</p>
-  </div>
-
   <div class="impl-box">
     <div class="impl-title">Iterable implementation notes</div>
     <ul>
       <li>Replace <code>[ITERABLE_YES_LINK]</code> and <code>[ITERABLE_NO_LINK]</code> with two distinct destination URLs — Iterable auto-tracks all clicks</li>
-      <li>Since this goes to all clinicians, consider adding a <strong>Journey suppression condition</strong> on emails 2–4: "already clicked Yes or No in a previous send" — this avoids needing to manually filter the audience</li>
-      <li>If you want the "already confirmed" banner to be dynamic (hidden for clinicians who haven't responded yet, shown for those who have), use Iterable's <strong>Handlebars conditional blocks</strong>: <code>{{#if user.memorialDayConfirmed}}...{{/if}}</code></li>
-      <li>Calendar sync completion can't be auto-detected unless you set a user profile field when the Guru link is clicked — worth discussing with your eng team if you want to track that separately</li>
+      <li>Consider a <strong>Journey suppression condition</strong> on emails 2–4: exit clinicians who already clicked Yes or No in a prior send</li>
+      <li>To make the "Already confirmed?" banner dynamic, use Iterable Handlebars: <code>{{#if user.memorialDayConfirmed}}...{{/if}}</code></li>
       <li>Use <code>{{firstName}}</code> for the personalization merge tag</li>
     </ul>
   </div>
-
 </div>
 
 </body>
