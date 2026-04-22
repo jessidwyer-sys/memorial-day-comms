@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartwheel — Memorial Day Email Templates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange:         #F0702E;
+      --indigo:         #394B99;
+      --lavender:       #B1A5F7;
+      --light-lavender: #EBE9FD;
+      --forest:         #26544F;
+      --light-mint:     #E9F3E5;
+      --charcoal:       #0F1B1F;
+      --taupe:          #9C9283;
+      --sand:           #F0ECE9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #E4E1DD;
+      padding: 40px 16px 64px;
+      color: var(--charcoal);
+    }
+
+    /* ── Page chrome ── */
+    .page-header {
+      max-width: 600px;
+      margin: 0 auto 36px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .page-header-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--indigo);
+    }
+    .page-header-logo span { color: var(--orange); }
+    .page-header-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--taupe);
+    }
+
+    /* ── Email wrapper ── */
+    .email-wrapper { max-width: 600px; margin: 0 auto 48px; }
+
+    /* ── Email metadata bar ── */
+    .email-meta {
+      background: #FAFAF9;
+      border: 1px solid #D9D4CE;
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      padding: 14px 24px;
+    }
+    .email-meta-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+    .email-meta-row:last-child { margin-bottom: 0; }
+    .meta-key {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--taupe);
+      min-width: 44px;
+      flex-shrink: 0;
+    }
+    .meta-val { font-size: 12px; color: #555; }
+    .meta-val.subject { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+
+    /* ── Email shell ── */
+    .email {
+      background: var(--sand);
+      border: 1px solid #D9D4CE;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .email-header {
+      background: var(--indigo);
+      padding: 16px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 19px;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .logo-text .dot { color: var(--orange); }
+    .automated-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── Body ── */
+    .email-body { background: #fff; padding: 28px 36px 24px; }
+
+    /* ── Already-done dismissal banner (emails 2–4) ── */
+    .already-done {
+      background: var(--light-mint);
+      border-radius: 7px;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .already-done-icon {
+      font-size: 15px;
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+    .already-done p {
+      font-size: 13px;
+      color: var(--forest);
+      font-weight: 500;
+      margin: 0 !important;
+      line-height: 1.5;
+    }
+    .already-done p strong { color: var(--forest); }
+
+    .greeting { font-size: 14px; color: var(--charcoal); margin-bottom: 10px; }
+
+    .email-body > p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* ── Action blocks ── */
+    .actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+
+    .action-block {
+      border: 1.5px solid #EBEBEB;
+      border-radius: 8px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .action-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--indigo);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .action-body { flex: 1; }
+    .action-body strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+    .action-body .sub {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .btn-setup {
+      display: inline-block;
+      background: var(--indigo);
+      color: #fff !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Confirm block (inside action 2) ── */
+    .confirm-block {
+      background: var(--light-lavender);
+      border-radius: 7px;
+      padding: 16px 16px 13px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .confirm-q {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--charcoal);
+      margin-bottom: 13px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .btn-yes {
+      display: inline-block;
+      background: var(--indigo);
+      color: #fff !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 26px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      min-width: 155px;
+    }
+    .btn-no {
+      display: inline-block;
+      background: var(--forest);
+      color: #fff !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 26px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      min-width: 155px;
+    }
+    .iterable-note {
+      font-size: 10px;
+      color: var(--taupe);
+      font-style: italic;
+    }
+
+    /* ── Outcomes ── */
+    .outcomes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .outcome {
+      background: var(--sand);
+      border-radius: 6px;
+      padding: 11px 13px;
+    }
+    .outcome-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+    }
+    .lbl-yes { color: var(--indigo); }
+    .lbl-no  { color: var(--forest); }
+    .outcome p { font-size: 12px; color: #555; line-height: 1.5; }
+
+    /* ── Deadline ── */
+    .deadline {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 5px;
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
+    }
+
+    hr.divider { border: none; border-top: 1px solid #F0ECE9; margin: 18px 0; }
+
+    .help-text { font-size: 13px; color: var(--taupe); margin-bottom: 18px; }
+    .help-text a { color: var(--indigo); text-decoration: underline; }
+
+    .signature { font-size: 13px; color: #555; }
+    .signature strong { color: var(--charcoal); }
+
+    /* ── Footer ── */
+    .email-footer { background: var(--sand); padding: 11px 36px; }
+    .email-footer p { font-size: 11px; color: var(--taupe); }
+    .email-footer a { color: var(--taupe); }
+
+    /* ── Notes section ── */
+    .notes-section { max-width: 600px; margin: 0 auto; }
+    .flag-box {
+      background: #FFF6F0;
+      border-left: 3px solid var(--orange);
+      border-radius: 0 6px 6px 0;
+      padding: 13px 17px;
+      margin-bottom: 14px;
+    }
+    .flag-box p { font-size: 13px; color: #444; line-height: 1.6; }
+    .flag-box strong { color: var(--orange); }
+    .impl-box {
+      background: white;
+      border: 1px solid #D9D4CE;
+      border-radius: 8px;
+      padding: 18px 22px;
+    }
+    .impl-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--indigo);
+      margin-bottom: 11px;
+    }
+    .impl-box ul { font-size: 13px; color: #555; line-height: 1.85; padding-left: 18px; }
+    .impl-box code { background: var(--light-lavender); color: var(--indigo); font-size: 11px; padding: 2px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-header-logo">Cartwheel<span>.</span></div>
+  <div class="page-header-sub">Memorial Day Clinician Emails — Preview</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     EMAIL 1 · May 5  (first send — everyone)
+     ═══════════════════════════════════════════ -->
+<div class="email-wrapper">
+  <div class="email-meta">
+    <div class="email-meta-row">
+      <span class="meta-key">Send</span>
+      <span class="meta-val">Tuesday, May 5, 2026 · All clinicians</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">From</span>
+      <span class="meta-val">Provider Success Team &lt;providerteam@cartwheelcare.org&gt;</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">Subject</span>
+      <span class="meta-val subject">Two Actions Required Before Memorial Day</span>
+    </div>
+  </div>
+  <div class="email">
+    <div class="email-header">
+      <div class="logo-text">Cartwheel<span class="dot">.</span></div>
+      <div class="automated-tag">Automated notification</div>
+    </div>
+    <div class="email-body">
+      <p class="greeting">Hi [First Name],</p>
+      <p>We're launching a <strong>Cartwheel Closure Calendar</strong> that automatically blocks holidays in your Healthie schedule — starting with Memorial Day (May 25). You have two things to complete before <strong>May 21</strong>.</p>
+
+      <div class="actions">
+
+        <!-- Action 1 -->
+        <div class="action-block">
+          <div class="action-num">1</div>
+          <div class="action-body">
+            <strong>Sync the Closure Calendar to Healthie</strong>
+            <span class="sub">Adds Memorial Day and future Cartwheel closures to your schedule automatically.</span>
+            <a href="https://app.getguru.com/card/Tnr4MAGc/Adding-Cartwheel-Closure-Calendar-to-Healthie" class="btn-setup">View Setup Instructions →</a>
+          </div>
+        </div>
+
+        <!-- Action 2 -->
+        <div class="action-block">
+          <div class="action-num">2</div>
+          <div class="action-body">
+            <strong>Confirm your Memorial Day plan</strong>
+            <span class="sub">This tells us whether to keep or clear the May 25 block on your schedule.</span>
+            <div class="confirm-block">
+              <p class="confirm-q">Will you be seeing clients on May 25?</p>
+              <div class="btn-row">
+                <a href="[ITERABLE_YES_LINK]" class="btn-yes">Yes, I'm working</a>
+                <a href="[ITERABLE_NO_LINK]" class="btn-no">No, I'm not working</a>
+              </div>
+              <p class="iterable-note">↑ Preview only — replace with Iterable journey-tracked links</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-label lbl-yes">If you're working</div>
+          <p>Remove the holiday block so sessions stay active. Notify clients as usual.</p>
+        </div>
+        <div class="outcome">
+          <div class="outcome-label lbl-no">If you're not working</div>
+          <p>Keep the block. Cancel or reschedule existing sessions and notify clients.</p>
+        </div>
+      </div>
+
+      <div><span class="deadline">Deadline: May 21</span></div>
+
+      <hr class="divider">
+
+      <p class="help-text">
+        Need help? Join <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Wednesday office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">submit a help desk ticket</a>.
+      </p>
+      <p class="signature">— <strong>Provider Success Team</strong></p>
+    </div>
+    <div class="email-footer">
+      <p>Automated notification sent to all Cartwheel providers. <a href="#">Unsubscribe</a></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     EMAIL 2 · May 12  (all clinicians)
+     ═══════════════════════════════════════════ -->
+<div class="email-wrapper">
+  <div class="email-meta">
+    <div class="email-meta-row">
+      <span class="meta-key">Send</span>
+      <span class="meta-val">Tuesday, May 12, 2026 · All clinicians</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">From</span>
+      <span class="meta-val">Provider Success Team &lt;providerteam@cartwheelcare.org&gt;</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">Subject</span>
+      <span class="meta-val subject">Reminder: Sync Your Calendar + Confirm Your Memorial Day Plan</span>
+    </div>
+  </div>
+  <div class="email">
+    <div class="email-header">
+      <div class="logo-text">Cartwheel<span class="dot">.</span></div>
+      <div class="automated-tag">Automated notification</div>
+    </div>
+    <div class="email-body">
+
+      <div class="already-done">
+        <div class="already-done-icon">✓</div>
+        <p><strong>Already confirmed your plan?</strong> You can ignore this — just make sure you've completed the calendar sync in Step 1.</p>
+      </div>
+
+      <p class="greeting">Hi [First Name],</p>
+      <p>Memorial Day is two weeks away. If you haven't completed both steps yet:</p>
+
+      <div class="actions">
+
+        <div class="action-block">
+          <div class="action-num">1</div>
+          <div class="action-body">
+            <strong>Sync the Closure Calendar to Healthie</strong>
+            <a href="https://app.getguru.com/card/Tnr4MAGc/Adding-Cartwheel-Closure-Calendar-to-Healthie" class="btn-setup" style="margin-top: 6px;">Setup Guide →</a>
+          </div>
+        </div>
+
+        <div class="action-block">
+          <div class="action-num">2</div>
+          <div class="action-body">
+            <strong>Confirm your Memorial Day plan</strong>
+            <div class="confirm-block" style="margin-top: 8px;">
+              <p class="confirm-q">Will you be seeing clients on May 25?</p>
+              <div class="btn-row">
+                <a href="[ITERABLE_YES_LINK]" class="btn-yes">Yes, I'm working</a>
+                <a href="[ITERABLE_NO_LINK]" class="btn-no">No, I'm not working</a>
+              </div>
+              <p class="iterable-note">↑ Preview only — replace with Iterable journey-tracked links</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-label lbl-yes">Working</div>
+          <p>Remove the holiday block. Keep sessions, notify clients.</p>
+        </div>
+        <div class="outcome">
+          <div class="outcome-label lbl-no">Not working</div>
+          <p>Keep the block. Cancel or reschedule sessions, notify clients.</p>
+        </div>
+      </div>
+
+      <p class="help-text">
+        Questions? <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">help desk</a>.
+      </p>
+      <p class="signature">— <strong>Provider Success Team</strong></p>
+    </div>
+    <div class="email-footer">
+      <p>Automated notification sent to all Cartwheel providers. <a href="#">Unsubscribe</a></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     EMAIL 3 · May 19  (all clinicians)
+     ═══════════════════════════════════════════ -->
+<div class="email-wrapper">
+  <div class="email-meta">
+    <div class="email-meta-row">
+      <span class="meta-key">Send</span>
+      <span class="meta-val">Tuesday, May 19, 2026 · All clinicians</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">From</span>
+      <span class="meta-val">Provider Success Team &lt;providerteam@cartwheelcare.org&gt;</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">Subject</span>
+      <span class="meta-val subject">One Week Left: Sync Your Calendar + Confirm Your Plan</span>
+    </div>
+  </div>
+  <div class="email">
+    <div class="email-header">
+      <div class="logo-text">Cartwheel<span class="dot">.</span></div>
+      <div class="automated-tag">Automated notification</div>
+    </div>
+    <div class="email-body">
+
+      <div class="already-done">
+        <div class="already-done-icon">✓</div>
+        <p><strong>Already confirmed your plan?</strong> You can ignore this — just make sure you've completed the calendar sync in Step 1.</p>
+      </div>
+
+      <p class="greeting">Hi [First Name],</p>
+      <p>Memorial Day is next Monday. Deadline to complete both steps is <strong>May 21</strong>.</p>
+
+      <div class="actions">
+
+        <div class="action-block">
+          <div class="action-num">1</div>
+          <div class="action-body">
+            <strong>Sync the Closure Calendar to Healthie</strong>
+            <a href="https://app.getguru.com/card/Tnr4MAGc/Adding-Cartwheel-Closure-Calendar-to-Healthie" class="btn-setup" style="margin-top: 6px;">Setup Guide →</a>
+          </div>
+        </div>
+
+        <div class="action-block">
+          <div class="action-num">2</div>
+          <div class="action-body">
+            <strong>Confirm your May 25 plan</strong>
+            <div class="confirm-block" style="margin-top: 8px;">
+              <p class="confirm-q">Working on Memorial Day?</p>
+              <div class="btn-row">
+                <a href="[ITERABLE_YES_LINK]" class="btn-yes">Yes, I'm working</a>
+                <a href="[ITERABLE_NO_LINK]" class="btn-no">No, I'm not working</a>
+              </div>
+              <p class="iterable-note">↑ Preview only — replace with Iterable journey-tracked links</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-label lbl-yes">Working</div>
+          <p>Remove the holiday block. Keep sessions, notify clients.</p>
+        </div>
+        <div class="outcome">
+          <div class="outcome-label lbl-no">Not working</div>
+          <p>Keep the block. Cancel or reschedule sessions, notify clients.</p>
+        </div>
+      </div>
+
+      <p class="help-text">
+        Questions? <a href="https://calendar.google.com/calendar/u/0/embed?src=c_a95492ecdc7f379d8aa61bba4d7c5ab6a1a6cb082fe4b604b3e08ed491e98a78@group.calendar.google.com&ctz=America/New_York">Office hours</a> or <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">help desk</a>.
+      </p>
+      <p class="signature">— <strong>Provider Success Team</strong></p>
+    </div>
+    <div class="email-footer">
+      <p>Automated notification sent to all Cartwheel providers. <a href="#">Unsubscribe</a></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     EMAIL 4 · May 21  (all clinicians — final)
+     ═══════════════════════════════════════════ -->
+<div class="email-wrapper">
+  <div class="email-meta">
+    <div class="email-meta-row">
+      <span class="meta-key">Send</span>
+      <span class="meta-val">Thursday, May 21, 2026 · All clinicians — Final</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">From</span>
+      <span class="meta-val">Provider Success Team &lt;providerteam@cartwheelcare.org&gt;</span>
+    </div>
+    <div class="email-meta-row">
+      <span class="meta-key">Subject</span>
+      <span class="meta-val subject">Last Day: Sync Your Calendar + Confirm Before Monday</span>
+    </div>
+  </div>
+  <div class="email">
+    <div class="email-header">
+      <div class="logo-text">Cartwheel<span class="dot">.</span></div>
+      <div class="automated-tag">Automated notification</div>
+    </div>
+    <div class="email-body">
+
+      <div class="already-done">
+        <div class="already-done-icon">✓</div>
+        <p><strong>Already confirmed your plan?</strong> You can ignore this — just make sure you've completed the calendar sync in Step 1.</p>
+      </div>
+
+      <p class="greeting">Hi [First Name],</p>
+      <p>Today is the deadline. Memorial Day is this Monday — please complete both steps now if you haven't.</p>
+
+      <div class="actions">
+
+        <div class="action-block">
+          <div class="action-num">1</div>
+          <div class="action-body">
+            <strong>Sync the Closure Calendar to Healthie</strong>
+            <a href="https://app.getguru.com/card/Tnr4MAGc/Adding-Cartwheel-Closure-Calendar-to-Healthie" class="btn-setup" style="margin-top: 6px;">Setup Guide →</a>
+          </div>
+        </div>
+
+        <div class="action-block">
+          <div class="action-num">2</div>
+          <div class="action-body">
+            <strong>Confirm your plan now</strong>
+            <div class="confirm-block" style="margin-top: 8px;">
+              <p class="confirm-q">Are you seeing clients on May 25?</p>
+              <div class="btn-row">
+                <a href="[ITERABLE_YES_LINK]" class="btn-yes">Yes, I'm working</a>
+                <a href="[ITERABLE_NO_LINK]" class="btn-no">No, I'm not working</a>
+              </div>
+              <p class="iterable-note">↑ Preview only — replace with Iterable journey-tracked links</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-label lbl-yes">Working</div>
+          <p>Remove the holiday block so sessions stay active. Notify clients.</p>
+        </div>
+        <div class="outcome">
+          <div class="outcome-label lbl-no">Not working</div>
+          <p>Keep the block. Cancel or reschedule sessions. Notify clients.</p>
+        </div>
+      </div>
+
+      <p class="help-text">
+        Need help today? <a href="https://cartwheel.freshservice.com/support/tickets/new?workspace_id=6">Submit a help desk ticket</a> — we'll prioritize it.
+      </p>
+      <p class="signature">— <strong>Provider Success Team</strong></p>
+    </div>
+    <div class="email-footer">
+      <p>Automated notification sent to all Cartwheel providers. <a href="#">Unsubscribe</a></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     NOTES
+     ═══════════════════════════════════════════ -->
+<div class="notes-section">
+
+  <div class="flag-box">
+    <p><strong>⚠ Content inconsistency to resolve before sending:</strong> The original Email 1 says "if working, appointments remain as scheduled" with no action needed. Emails 3–4 say working clinicians should <em>remove</em> the holiday block. The templates above use the more explicit version. Confirm the correct instruction before launch.</p>
+  </div>
+
+  <div class="impl-box">
+    <div class="impl-title">Iterable implementation notes</div>
+    <ul>
+      <li>Replace <code>[ITERABLE_YES_LINK]</code> and <code>[ITERABLE_NO_LINK]</code> with two distinct destination URLs — Iterable auto-tracks all clicks</li>
+      <li>Since this goes to all clinicians, consider adding a <strong>Journey suppression condition</strong> on emails 2–4: "already clicked Yes or No in a previous send" — this avoids needing to manually filter the audience</li>
+      <li>If you want the "already confirmed" banner to be dynamic (hidden for clinicians who haven't responded yet, shown for those who have), use Iterable's <strong>Handlebars conditional blocks</strong>: <code>{{#if user.memorialDayConfirmed}}...{{/if}}</code></li>
+      <li>Calendar sync completion can't be auto-detected unless you set a user profile field when the Guru link is clicked — worth discussing with your eng team if you want to track that separately</li>
+      <li>Use <code>{{firstName}}</code> for the personalization merge tag</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
